@@ -408,7 +408,7 @@ var alamode2 = {
           if (i == (columnIndex - 1)) {
             var content = $(this).text();
 
-            if ($(this).find("img").length == 0) {
+            if ($(this).find("video").length == 0) {
               $(this).css("text-align","center")
               $(this).html("<video style='height: " + imgHeight + "px;' src='" + content + "'></video>")
             }
