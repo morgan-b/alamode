@@ -367,56 +367,7 @@ var alamode2 = {
     },1000);
   },
 
-  addImagesToTables: function(o) {
-
-    var tableId = "#" + o["table"],
-        imageColumn = o["column"];
-        // imgHeight = o["image_height"] || 100;
-
-    setTimeout(function() {
-      drawImages();
-    },1000)
-
-    $(tableId).keyup(function() {
-      setTimeout(function() {
-        drawImages();
-      },500)
-    });
-
-    $(tableId).mousemove(function() {
-      drawImages();
-    })
-
-    function drawImages() {
-      var tableDiv = $(tableId + " table"),
-          tableHeader = $(tableId + " .js-header-table"),
-          headers = !tableHeader ? $(tableHeader).find("th") : $(tableId + " .js-col-header"),
-          rows = tableDiv.find("tr"),
-          columnIndex = 0;
-
-      headers.each(function() {
-        text = $(this).find(".axel-table-header-label").text()
-        if (text == imageColumn) {
-          columnIndex = +$(this).attr("data-axel-column")
-        }
-      })
-
-      rows.each(function() {
-        var cells = $(this).find("td");
-
-        cells.each(function(i) {
-          if (i == (columnIndex - 1)) {
-            var content = $(this).text();
-
-            if ($(this).find("video").length == 0) {
-              $(this).css("text-align","center")
-              $(this).html("<video height='240' width='320' src='" + content + "' type='video/mp4'></video>")
-            }
-          }
-        })
-      })
-    }
-  },
+  
   addVideosToTables: function(o) {
 
     var tableId = "#" + o["table"],
