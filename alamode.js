@@ -370,8 +370,8 @@ var alamode2 = {
   addImagesToTables: function(o) {
 
     var tableId = "#" + o["table"],
-        imageColumn = o["column"],
-        imgHeight = o["image_height"] || 100;
+        imageColumn = o["column"];
+        // imgHeight = o["image_height"] || 100;
 
     setTimeout(function() {
       drawImages();
@@ -410,7 +410,7 @@ var alamode2 = {
 
             if ($(this).find("video").length == 0) {
               $(this).css("text-align","center")
-              $(this).html("<video style='height: " + imgHeight + "px;' src='" + content + "'></video>")
+              $(this).html("<video height='240' width='320' src='" + content + "' type='video/mp4'></video>")
             }
           }
         })
@@ -475,7 +475,7 @@ var alamode2 = {
     if (chart.slice(0,6) == "python") {
       $("#" + chart + " .mode-python").css("height",height)
       $("#" + chart + " .mode-python").css("max-height",height)
-      $("#" + chart + " img").css("max-height",height)
+      $("#" + chart + " video").css("max-height",height)
     } else {
       $("#" + chart + " .chart").css("height",height)
       $("#" + chart + " .chart-svg").css("height",height)
