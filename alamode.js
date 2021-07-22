@@ -3,7 +3,7 @@
 // Visualizations for Mode reports
 var version = "0.23";
 
-var alamode = {
+var alamode2 = {
 
   reportError: function(msg) {
     $("<h1 class='mode-error'>").text(msg).prependTo(document.body);
@@ -460,7 +460,7 @@ var alamode = {
 
             if ($(this).find("video").length == 0) {
               $(this).css("text-align","center")
-              $(this).html("<video style='height: " + videoHeight + "px;' src='" + content + "' type='video/mp4''>")
+              $(this).html("<video style='height: " + videoHeight + "px controls>" + "<source sc='" + content + "' type='video/mp4'></video>")
             }
           }
         })
