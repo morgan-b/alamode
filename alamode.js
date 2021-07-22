@@ -460,7 +460,8 @@ var alamode2 = {
 
             if ($(this).find("video").length == 0) {
               $(this).css("text-align","center")
-              $(this).html("<video style='height: " + videoHeight + "px controls>" + "<source sc='" + content + "' type='video/mp4'></video>")
+              $(this).html("<video height='240' width='320 controls>" 
+              + "<source src='" + content + "' type='video/mp4'></video>")
             }
           }
         })
